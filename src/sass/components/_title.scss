@@ -1,0 +1,44 @@
+.title__link {
+  display: flex;
+  flex-direction: row;
+  &::before {
+    content:"l";
+    font-family: "icons" !important;
+    font-size: 3.7rem;
+    color: $main;
+    display:block;
+    vertical-align: top;
+  }
+}
+
+.title__main {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title__title {
+  font-size: 19px;
+  text-transform: uppercase;
+}
+
+.title__subtitle {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 840px) {
+  .title__subtitle {
+    @include hidden;
+  }
+  .title__title {
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title__main {
+      @include hidden;
+      width: 0;
+  }
+}

@@ -1,0 +1,54 @@
+@mixin hidden {
+    font-size: 0;
+    text-indent: -9999px;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    letter-spacing: 0;
+}
+
+@mixin home-card($width) {
+    width: $width;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@mixin basic-button($bgc) {
+    background-color: $bgc;
+    color: white;
+    font-weight: 600;
+    padding: 5px 15px;
+    border: 2px solid $bgc;
+    transition: all 0.2s ease-in-out;
+
+    &:hover, &:focus {
+        background-color: white;
+        color: $bgc;
+    }
+}
+
+@mixin main-title {
+    font-size: 2.5rem;
+    color: $main-dark;
+    line-height: 1;
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: ($height / $width) * 100%;
+    }
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }

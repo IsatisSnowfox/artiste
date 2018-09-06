@@ -1,0 +1,52 @@
+.categories {
+    max-width: $max-width;
+    padding-left: $global-padding;
+    padding-right: $global-padding;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.categories__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.categories__button {
+    @include basic-button($main);
+    align-self: flex-end;
+    margin-right: $title-right-padding;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 980px) {
+    .categories {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    .categories__inner {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .categories__button {
+        margin-right: 0;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    
+    .categories__inner {
+        justify-content: center;
+    }
+}

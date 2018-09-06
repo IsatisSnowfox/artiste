@@ -1,0 +1,42 @@
+
+.particuliers {
+  max-width: $max-width;
+  padding-left: $global-padding;
+  padding-right: $global-padding;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.particuliers__title {
+  @include main-title;
+  text-align: center;
+  font-size: 4rem;
+  margin: 50px 0 30px;
+}
+
+.particuliers__description {
+  width: 75%;
+  align-self: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 980px) {
+  .particuliers {
+      padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .particuliers__title {
+      font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .particuliers__title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,15 @@
+.pictures {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.pictures__title {
+  @include main-title;
+  text-align: center;
+}
+
+.pictures__description {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}

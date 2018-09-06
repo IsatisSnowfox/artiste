@@ -1,0 +1,38 @@
+.expositions {
+    max-width: $max-width;
+    padding-left: $global-padding;
+    padding-right: $global-padding;
+    margin: 0 auto;
+}
+
+.expositions__title {
+    @include main-title;
+    text-align: center;
+    font-size: 4rem;
+    margin: 50px 0 70px;
+}
+
+.expositions__list {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 980px) {
+    .expositions {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .expositions__title {
+        font-size: 3rem;
+        margin: 40px 0 50px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .expositions__title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+}

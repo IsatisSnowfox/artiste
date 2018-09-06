@@ -1,0 +1,116 @@
+.single-event {
+    @include home-card(calc(95% / 3));
+    position: relative;
+
+    &__title {
+        font-weight: 600;
+        margin: 10px 0;
+        font-size: 1.8rem;
+        line-height: 1.1;
+        color: $main-dark;
+    }
+    
+    &__excerpt {
+        font-size: 0.875rem;
+    }
+
+    &__img {
+        order: 0;
+        height: 450px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 0%;
+    }
+
+    &__text {
+        order: 1;
+        margin-bottom: 10px;
+    }
+
+    
+}
+
+.single-event__bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    order: 10;
+    width: 100%;
+}
+
+.single-event__read-more {
+    display: inline-block;
+    margin-bottom: 10px;
+    position: relative;
+    &::after {
+        content: "";
+        transition: all 0.1s ease-in-out;
+        display: block;
+        position: absolute;
+        bottom: 3px;
+        height: 1px;
+        width: 100%;
+        background-color: $black;
+    }
+
+    &:hover::after {
+        bottom: -1px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .single-event {
+        flex-direction: row;
+        height: 250px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .single-event__img {
+        height: 100%;
+        width: 180px;
+        margin-right: 30px;
+        object-fit: cover;
+    }
+
+    .single-event__bottom {
+        position: absolute;
+        width: calc(100% - 210px);
+        bottom:0;
+        right: 0;
+    }
+
+    .single-event__read-more {
+        margin: 0;
+    }
+
+    .single-event__title {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .single-event__title {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .single-event {
+        flex-direction: column;
+        height: unset;
+        margin-bottom: 40px;
+    }
+
+    .single-event__img {
+        align-self: center;
+        margin-bottom: 10px;
+    }
+
+    .single-event__bottom {
+        position: static;
+        align-content: space-between;
+        width: 100%;
+    }
+}

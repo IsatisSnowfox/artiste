@@ -1,0 +1,120 @@
+.particulier {
+    max-width: $max-width;
+    padding-left: $global-padding;
+    padding-right: $global-padding;
+    margin: 0 auto;
+}
+
+.particulier-categories__title {
+    @include main-title;
+    margin: 45px 0;
+} 
+
+.particulier-categories__content {
+    display: flex;
+}
+
+.particulier-categories__images {
+    flex-basis: 475px;
+    min-width: 475px;
+    overflow: hidden;
+    position: relative;
+}
+
+.particulier-categories__link {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.particulier-categories__link--visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.particulier-categories__image {
+    max-height: 100%;
+    width: auto;
+}
+
+.particulier-categories__hint {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: $main-light;
+    color: $main;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 15px;
+    font-size: 0.75rem;
+}
+
+.particulier-categories__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media screen and (max-width: 980px) {
+    .particulier {
+        padding: 0 10px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .particulier-categories__images {
+        flex-basis: 375px;
+        min-width: 375px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+
+    .particulier-categories__images {
+        flex-basis: 50%;
+        min-width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .particulier-categories__content {
+        flex-direction: column;
+    }
+    
+    .particulier-categories__images {
+        flex-basis: 480px;
+        flex-shrink: 1;
+        min-width: 0;
+        max-height: 200px;
+    }
+
+    .particulier-categories__link {
+        max-height: 200px;
+        width: 100%;
+        overflow: hidden;
+        display: block;
+    }
+
+    .particulier-categories__image {
+        width: 100%;
+        max-height: none;
+        height: auto;
+    }
+
+    .particulier-categories__wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .particulier-categories__hint {
+        padding: 5px;
+        font-size: 0.75rem;
+    }
+    
+    
+}

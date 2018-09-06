@@ -1,0 +1,108 @@
+.particulier-selected__description {
+    display: flex;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    margin: 0;
+    font-size: 0;
+    pointer-events: none;
+
+    &--visible {
+        margin: 40px 0;
+        min-height: 200px;
+        opacity: 1;
+        pointer-events: auto;
+        height: auto;
+        width: auto;
+        font-size: 1rem;
+    }
+}
+
+.particulier-selected__c1 {
+    flex-basis: 300px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 40px;
+}
+
+.particulier-selected__title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: $main;
+    line-height: 1;
+}
+
+.particulier-selected__button {
+    @include basic-button($main);
+}
+
+.particulier-selected__c2 {
+    column-count: 2;
+    column-gap: 20px;
+    flex-shrink: 1;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 900px) {
+
+    .particulier-selected__c1  {
+        flex-basis: 200px;
+        min-width: 200px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+
+    .particulier-selected__c2  {
+        column-count: 1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .particulier-selected__description {
+        flex-direction: column;
+
+        &--visible {
+            margin: 20px 0;
+        }
+    }
+
+    .particulier-selected__c1  {
+        min-width: 100%;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+        flex-basis: 100px;
+    }
+
+    .particulier-selected__c2 {
+        margin-left: 0;
+    }
+
+    .particulier-selected__button {
+        text-align: center;
+    }
+
+    .particulier-selected__title {
+        font-size: 2rem;
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .particulier-selected__c1  {
+        flex-direction: column;
+        align-items: flex-start;
+        flex-basis: 0%;
+    }
+
+    .particulier-selected__title {
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+}

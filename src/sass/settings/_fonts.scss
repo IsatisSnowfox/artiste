@@ -1,0 +1,40 @@
+// Quicksand
+
+@font-face {
+    font-family: Quicksand;
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/quicksand/Quicksand-Regular.otf");
+}
+
+@font-face {
+    font-family: Quicksand;
+    font-weight: 400;
+    font-style: italic;
+    src: url("../fonts/quicksand/Quicksand-Italic.otf");
+}
+
+@font-face {
+    font-family: Quicksand;
+    font-weight: 600;
+    font-style: normal;
+    src: url("../fonts/quicksand/Quicksand-Bold.otf");
+}
+
+@font-face {
+    font-family: Quicksand;
+    font-weight: 600;
+    font-style: italic;
+    src: url("../fonts/quicksand/Quicksand-BoldItalic.otf");
+}
+
+@font-face {
+    font-family: 'icons';
+    src:  url('../fonts/icons/icomoon.eot?2cb5fy');
+    src:  url('../fonts/icons/icomoon.eot?2cb5fy#iefix') format('embedded-opentype'),
+      url('../fonts/icons/icomoon.ttf?2cb5fy') format('truetype'),
+      url('../fonts/icons/icomoon.woff?2cb5fy') format('woff'),
+      url('../fonts/icons/icomoon.svg?2cb5fy#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }

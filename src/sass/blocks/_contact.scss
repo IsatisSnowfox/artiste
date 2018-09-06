@@ -1,0 +1,36 @@
+.contact {
+    //max-width: $max-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact__about-me {
+    max-width: 950px;
+    margin-right: 50px;
+}
+.contact__form {
+    width: 100%;
+}
+
+
+
+
+@media screen and (max-width: 750px) {
+    .contact {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .contact__title {
+        margin-bottom: 10px;
+    }
+
+    .contact__description {
+        margin-right: 0;
+        flex-basis: 0%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}

@@ -1,0 +1,135 @@
+.single-exposition {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.single-exposition__text-container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 0;
+  width: 600px;
+}
+
+.single-exposition__title {
+  color: $black;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.single-exposition__content {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.single-exposition__date {
+  order: 10;
+  align-self: flex-end;
+  color: $pink;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.single-exposition:nth-of-type(even) .single-exposition__text-container {
+  padding-right: 60px;
+}
+
+.single-exposition:nth-of-type(odd) .single-exposition__text-container {
+  padding-left: 60px;
+}
+
+.single-exposition:nth-of-type(odd) .single-exposition__img-container {
+  order: -1;
+}
+
+.single-exposition:nth-of-type(even) .single-exposition__img-container {
+  order: 100;
+}
+
+.single-exposition__img-container {
+  display: flex;
+  height: auto;
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.single-exposition__img-container>* {
+  width: 50%;
+}
+
+.single-exposition__img {
+  height: 100%;
+  width: 100%;
+}
+
+.single-exposition__img {
+  display: flex;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .single-exposition {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .single-exposition__img-container {
+      width: 350px;
+  }
+
+  .single-exposition:nth-of-type(even) .single-exposition__text-container {
+    padding-right: 0;
+  }
+  
+  .single-exposition:nth-of-type(odd) .single-exposition__text-container {
+    padding-left: 0;
+  }
+
+  .single-exposition:nth-child(n) .single-exposition__img-container {
+      order: -1;
+  }
+
+  .single-exposition__text-container {
+      margin-top: 10px;
+      width: 80%;
+      padding: 0;
+  }
+
+  .single-exposition__text {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .single-exposition__title {
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  .single-exposition__content {
+      margin-bottom: 15px;
+  }
+
+  .single-exposition__button {
+      display: flex;
+      align-self: center;
+      margin: 0 auto;
+  }
+}
+
+
+@media screen and (max-width: 560px) {
+  .single-exposition__img-container, .single-exposition__text-container {
+      width: 100%;
+  }
+
+  .single-exposition__text-container {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+
+}

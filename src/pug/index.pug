@@ -1,0 +1,45 @@
+include includes/_mixins.pug
+
+doctype html
+html
+  - var currentPage = "Accueil"
+  +head(currentPage)
+  
+  body
+    +header(currentPage)
+
+    main.main 
+      section.hero-header 
+        div.hero-header__inner
+          h2.hero-header__title Laurie-Anne Romagne
+          p.hero-header__subtitle Photographie créative
+
+      
+
+      section.categories
+        h2.categories__title.hidden Catégories
+        div.categories__inner
+          +category("Professionnels", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", basePath+"assets/images/accueil/professionnels-v.jpg", basePath+"assets/images/accueil/professionnels-h1.jpg", basePath+"assets/images/accueil/professionnels-h2.jpg")
+          +category("Particuliers", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", basePath+"assets/images/accueil/particuliers-v.jpg", basePath+"assets/images/accueil/particuliers-h1.jpg", basePath+"assets/images/accueil/particuliers-h2.jpg")
+          +category("Artistique", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.", basePath+"assets/images/accueil/artistiques-v.jpg", basePath+"assets/images/accueil/artistiques-h1.jpg", basePath+"assets/images/accueil/artistiques-h2.jpg")
+
+      section.event
+        h2.event__title Expositions
+        div.event__wrapper
+          +event("28/06/2018", "Exposition collective Rêver", "Huitième biennale de la photographie de Condroz", "event__single", basePath+"assets/images/expositions/rever1.jpg", "rever")
+          +event("30/07/2018", "Projection collective Expolaroid", "ASBL Paprika à Bruxelles", "event__single", basePath+"assets/images/expositions/expolaroid1.jpg", "expolaroid")
+          +event("12/08/2018", "Exposition individuelle Dernier Jardin", "Cimetière de la Buissière à Huy", "event__single", basePath+"assets/images/expositions/dernier_jardin1.png", "dernier-jardin")
+        a(class="event__button button" href=pagePathes["Expositions"]) Voir toutes mes expositions
+
+      section.instagram
+        h2.instagram__title Fil Instagram
+        div.instagram__gallery
+          +instagram
+        a(class="instagram__button button" href=socialNetworks["Instagram"]) Visiter mon Instagram
+
+      section.contact-form
+        h2.contact-form__title Formulaire de contact
+        +contactForm("contact-form")
+      
+    +footer(currentPage)
+    

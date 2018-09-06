@@ -1,0 +1,104 @@
+.hero-header {
+    width: 100%;
+    min-height: 400px;
+    background: url('../images/accueil/banner.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    color: white;
+}
+
+.hero-header__inner {
+    max-width: 850px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero-header__title {
+    font-size: 4.5rem;
+    text-align: center;
+    min-width: 100%;
+    margin-bottom: 10px;
+    background-color: $main;
+}
+
+.hero-header__subtitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    align-self: flex-end;
+    &::before {
+        content: "l";
+        display: inline-block;
+        margin-right: 10px;
+        font-family: 'icons';
+        vertical-align: bottom;
+    }
+}
+
+@media screen and (max-width: 980px) {
+
+    .hero-header__inner {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .hero-header__title {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    .hero-header {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .hero-header__inner {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 1;
+    }
+}
+
+@media screen and (max-width: 7200px) {
+    .hero-header__title {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero-header__title {
+        font-size: 2.5rem;
+    }
+
+    .hero-header__subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hero-header__title {
+        font-size: 2rem;
+    }
+
+    .hero-header__subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .hero-header__title {
+        font-size: 1.5rem;
+    }
+
+    .hero-header__subtitle {
+        font-size: 1rem;
+    }
+}

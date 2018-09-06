@@ -1,0 +1,124 @@
+include settings.pug
+
+mixin head(currentPage)
+  head
+    meta(charset="utf-8")
+    meta(name="author" content="Félix Gason")
+    meta(name="description" content="Laurie-Anne Romagne, photographie créative")
+    meta(name="keywords" content="Laurie-Anne Romagne, photographer, photo, portfolio")
+    meta(name="viewport" content="width=device-width" initial-scale="1")
+
+    link(rel="apple-touch-icon" sizes="180x180" href=basePath + "apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href=basePath + "favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href=basePath + "favicon-16x16.png")
+    link(rel="manifest" href=basePath + "site.webmanifest")
+    meta(name="msapplication-TileColor" content="#da532c")
+    meta(name="theme-color" content="#ffffff")
+
+    title #{artistName} | #{currentPage}
+    
+    link(rel="stylesheet" href=basePath + "assets/css/main.css")
+    link(rel="stylesheet" href=basePath + "assets/css/lightbox.css")
+  
+mixin header(currentPage)
+  - var homeLink = ""
+  header.header
+    div.header__inner
+      h1.header__title.title
+        a(href=pagePathes["Accueil"] class="title__link") 
+          span.title__main 
+            span.title__title Laurie-Anne Romagne
+            span.hidden , 
+            span.title__subtitle photographie créative
+      nav(class="header__nav main-nav")
+        h2.hidden Navigation principale
+        <svg class="main-nav__icon" version="1.1" id="navIconSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 142 142;" xml:space="preserve"><rect class="svg__line svg__line--1" x="0" y="10" width="50" height="5"></rect><rect class="svg__line svg__line--2 svg__cross" x="0" y="25" width="50" height="5"></rect><rect class="svg__line svg__line--3 svg__cross" x="0" y="25" width="50" height="5"></rect><rect class="svg__line svg__line--4" x="0" y="40" width="50" height="5"></rect></svg>
+        ul(class="main-nav__list")
+          each page in pageList
+            li(class="main-nav__item") 
+              a(class="main-nav__link" href=pagePathes[page]) #{page}
+
+
+mixin footer(currentPage)
+  footer.footer__wrapper
+    section.footer
+      h2.footer__title.hidden Footer
+      div.footer__inner
+        ul.footer-categories.footer__category
+          each page in pageList
+            li.footer-categories__item
+              a(href=pagePathes[page] class="category__link") #{page}
+        ul.social-networks.footer__social-networks
+          each link, name in socialNetworks
+            li.social-networks__item
+              a(class="social-networks__link social-networks__link--"+name.toLowerCase() href=link) 
+                span(class="social-networks__name") #{name}
+                if(name == 'Facebook')
+                  +facebookSvg
+                else if(name == 'Instagram')
+                  +instagramSvg
+  script(src=basePath+"assets/js/script.js")
+
+mixin lightbox()
+  script(src=basePath + "assets/js/lightbox-plus-jquery.min.js")
+
+mixin event(date, title, excerpt, className, image = false, tag)
+  a(href=basePath+isProd+"expositions.html#"+tag class=className + " single-event")
+    div.single-event__bottom
+      span.single-event__date #{date}
+      div.single-event__read-more.read-more En savoir plus
+        span.hidden  sur #{title}
+    div.single-event__text
+      h3.single-event__title #{title}
+      p.single-event__excerpt #{excerpt}
+    
+    img(alt="" src=image class="single-event__img" width="350" height="auto")
+    
+
+mixin category(title, content, image1, image2, image3)
+  section(class="categories__single single-category")
+    div.single-category__text-container
+      h3.single-category__title #{title}
+      div.single-category__text
+        p.single-category__content #{content}
+        a(class="single-category__button button" href=pagePathes[title]) Voir mes projets
+        span.hidden  #{title}
+    div.single-category__img-container
+      div.single-category__img-vertical
+        img(class="single-category__img" alt="" src=image1 width="350" height="auto")
+      div.single-category__img-horizontal
+        img(class="single-category__img" alt="" src=image2 width="350" height="auto")
+        img(class="single-category__img" alt="" src=image3 width="350" height="auto")
+    
+
+mixin instagram
+  each picture in instagramPics
+    figure.instagram__figure
+      img(alt="#" src=picture width="350" height="auto" class="instagram__img")
+
+mixin facebookSvg
+  svg(class="social-networks__svg" xmlns="http://www.w3.org/2000/svg" width="96.124" height="96.123" viewBox="0 0 96.124 96.123")
+    path(d="M72.089.02L59.624 0C45.62 0 36.57 9.285 36.57 23.656v10.907H24.037a1.96 1.96 0 0 0-1.96 1.961v15.803a1.96 1.96 0 0 0 1.96 1.96H36.57v39.876a1.96 1.96 0 0 0 1.96 1.96h16.352a1.96 1.96 0 0 0 1.96-1.96V54.287h14.654a1.96 1.96 0 0 0 1.96-1.96l.006-15.803a1.963 1.963 0 0 0-1.961-1.961H56.842v-9.246c0-4.444 1.059-6.7 6.848-6.7l8.397-.003a1.96 1.96 0 0 0 1.959-1.96V1.98A1.96 1.96 0 0 0 72.089.02z")
+
+mixin instagramSvg
+  svg(class="social-networks__svg" xmlns="http://www.w3.org/2000/svg" width="169.063" height="169.063" viewBox="0 0 169.063 169.063")
+    path(d="M122.406 0H46.654C20.929 0 0 20.93 0 46.655v75.752c0 25.726 20.929 46.655 46.654 46.655h75.752c25.727 0 46.656-20.93 46.656-46.655V46.655C169.063 20.93 148.133 0 122.406 0zm31.657 122.407c0 17.455-14.201 31.655-31.656 31.655H46.654C29.2 154.063 15 139.862 15 122.407V46.655C15 29.201 29.2 15 46.654 15h75.752c17.455 0 31.656 14.201 31.656 31.655v75.752z")
+    path(d="M84.531 40.97c-24.021 0-43.563 19.542-43.563 43.563 0 24.02 19.542 43.561 43.563 43.561s43.563-19.541 43.563-43.561c0-24.021-19.542-43.563-43.563-43.563zm0 72.123c-15.749 0-28.563-12.812-28.563-28.561 0-15.75 12.813-28.563 28.563-28.563s28.563 12.813 28.563 28.563c0 15.749-12.814 28.561-28.563 28.561zM129.921 28.251c-2.89 0-5.729 1.17-7.77 3.22a11.053 11.053 0 0 0-3.23 7.78c0 2.891 1.18 5.73 3.23 7.78 2.04 2.04 4.88 3.22 7.77 3.22 2.9 0 5.73-1.18 7.78-3.22 2.05-2.05 3.22-4.89 3.22-7.78 0-2.9-1.17-5.74-3.22-7.78-2.04-2.05-4.88-3.22-7.78-3.22z")
+
+mixin contactForm(className)
+  form(class=className+"__form form" method="post" action="#")
+        div.contact-form__question-wrapper
+          div.contact-form__question
+            label(class="contact-form__label" for="email") Email
+            input(class="contact-form__input" type="email" name="email" id="email")
+          div.contact-form__question
+            label(class="contact-form__label" for="subject") Nom
+            input(class="contact-form__input" type="text" name="name" id="name")
+        div.contact-form__question
+          label(class="contact-form__label" for="subject") Sujet
+          input(class="contact-form__input" type="text" name="subject" id="subject")
+        div.contact-form__question
+          label(class="contact-form__label" for="message") Message
+          textarea(class="contact-form__input" type="textarea" name="message" id="message" maxlength="400")
+          div.message__char-limit 155/400
+        button(type="submit" class="contact-form__submit") Envoyer

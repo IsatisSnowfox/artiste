@@ -1,0 +1,42 @@
+.single-particulier {
+    padding: 50px;
+    background-color: white;
+    border-right: 5px solid white;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $main;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &--visible {
+        background-color: $main-light;
+        border-color: $main;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .single-particulier {
+        padding: 10px;
+        flex-grow: 1;
+        flex-basis: 0%;
+        border-right: 0px;
+        border-bottom: 5px solid white;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        &--visible {
+            border-bottom-color: $main;
+        }
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .single-particulier {
+        padding: 5px;
+        flex-shrink: 1;
+    }   
+}

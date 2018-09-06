@@ -1,0 +1,42 @@
+.footer-categories {
+    margin-right: 200px;
+}
+
+.footer-categories__item {
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .category__link {
+        padding: 7px 0;
+        position: relative;
+
+        &::after {
+            content: "";
+            height: 1px;
+            background-color: $main-light;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+        }
+    
+        &:hover, &:focus {
+    
+            &::after {
+                opacity: 1;
+                transform: translateY(5px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .footer-categories {
+        margin-right: 50px;
+    }
+}

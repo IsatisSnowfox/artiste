@@ -1,0 +1,66 @@
+.event {
+    max-width: $max-width;
+    padding-left: $global-padding;
+    padding-right: $global-padding;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.event__title {
+    font-size: 2rem;
+    color: white;
+    background-color: $main;
+    font-weight: 600;
+    margin: 40px 0 45px;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    padding-left: 5px;
+}
+
+.event__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    margin-bottom: 50px;
+}
+
+.event__button {
+    @include basic-button($pink);
+    align-self: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 980px) {
+    .event {
+        padding: 0px 10px 0;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .event {
+        padding: 0px 10px 0;
+    }
+
+    .event__wrapper {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .event__button {
+        margin-right: 0;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    
+    .event__wrapper {
+        justify-content: center;
+    }
+}

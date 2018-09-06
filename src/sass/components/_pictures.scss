@@ -1,0 +1,32 @@
+.pictures {
+    padding: 10px;
+}
+
+.pictures__list {
+    line-height: 0;
+    column-count: 3;
+    column-gap: 3%;  
+}
+
+.pictures__item {
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 10%;
+}
+
+.pictures__single-picture {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 720px) {
+    .pictures__list {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .pictures__list {
+        column-count: 1;
+    }
+}

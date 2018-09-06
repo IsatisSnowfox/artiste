@@ -1,0 +1,50 @@
+.filter-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 10px;
+    
+    &:hover, &:focus {
+        .filter-item__custom-input {
+            background-color: $main-light;
+        }
+    }
+}
+
+.filter-item__label {
+    order: 2;
+    cursor: pointer;
+}
+
+.filter-item__input {
+    order: 1;
+    margin-right: 10px;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: -6px;
+    z-index: 10;
+    cursor: pointer;
+
+    &:checked {
+        ~ .filter-item__custom-input {
+            background-color: $main;
+        }
+    }
+}
+
+.filter-item__custom-input {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 2px solid $main;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    border-radius: 2px;
+    cursor: pointer;
+}

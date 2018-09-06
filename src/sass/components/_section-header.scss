@@ -1,0 +1,45 @@
+.section-header {
+    background-color: $main-light;
+    min-width: 350px;
+    padding: 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header__category-selector {
+    order: 0;
+}
+
+.section-header__title {
+    order: 1;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    @include main-title;
+}
+
+.section-header__description {
+    order: 2;
+}
+
+.section-header__button {
+    order: 3;
+    align-self: flex-start;
+    margin-top: 20px;
+    @include basic-button($main);
+}
+
+@media screen and (max-width: 870px) {
+    .section-header {
+        min-width: 300px;
+    }
+
+    .section-header__title {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .section-header {
+        padding: 0 10px 40px;
+    }
+}

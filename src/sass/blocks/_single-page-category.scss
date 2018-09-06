@@ -1,0 +1,39 @@
+.single-page-category {
+    max-width: $max-width;
+    padding-left: $global-padding;
+    padding-right: $global-padding;
+    margin: 0 auto;
+    display: flex;
+
+    &__pictures {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .single-page-category {
+        padding: 0 10px;
+    }
+}
+
+
+
+@media screen and (max-width: 720px) {
+    .single-page-category {
+        padding: 0;
+    }
+
+    .single-page-category {
+        flex-direction: column;
+
+        &__header {
+            order: 2;
+        }
+    
+        &__pictures {
+            order: 1;
+            padding: 0 10px;
+        }
+    }
+  
+}

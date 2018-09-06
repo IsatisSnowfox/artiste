@@ -1,0 +1,38 @@
+.social-networks__link {
+    padding: 7px 0;
+    display: flex;
+    align-items: center;
+
+    &:hover, &:focus {
+
+        .social-networks__name::after {
+            opacity: 1;
+            transform: translateY(5px);
+        }
+    }
+}
+
+.social-networks__name {
+    order: 2;
+    position: relative;
+
+    &::after {
+        content: "";
+        height: 1px;
+        background-color: $main-light;
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.social-networks__svg {
+    order: 1;
+    fill: currentColor;
+    height: 1em;
+    width: 20px;
+    margin-right: 20px;
+}
